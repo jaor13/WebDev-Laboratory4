@@ -1,0 +1,72 @@
+body {
+    font-family: "Raleway", sans-serif;
+    color: #2a322c;
+    position: relative;
+    background: transparent;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    background-size: cover;
+    animation: glow 5s infinite alternate, move 10s linear infinite;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: -1; /* Ensure it is behind other elements */
+}
+
+@keyframes glow {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+@keyframes move {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 90%; /* Responsive width */
+    max-width: 480px; /* Limit maximum width */
+    display: flex; /* Use flexbox for the form container */
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+
+.custom-width {
+    width: 100%; /* Full width for input */
+    max-width: 500px; /* Limit maximum width */
+}
+
+.btn {
+    height: 40px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #849497;
+    border: none;
+    width:120px;
+}
